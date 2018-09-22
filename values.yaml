@@ -1,0 +1,29 @@
+# Default values for devops-assignment.
+
+replicaCount: 2
+restartPolicy: Never
+
+image:
+  repository: khoatdd/devops-assignment-03
+  tag: 0.1.0
+  pullPolicy: Always
+
+service:
+  annotations: {}
+  clusterIP: ""
+  externalIPs: []
+  loadBalancerIP: ""
+  loadBalancerSourceRanges: []
+  type: ClusterIP
+  port: 80
+  nodePort: ""
+
+podAnnotations: {}
+
+resources: {}
+
+nodeSelector: {}
+
+ingress:
+  hostName: devops-assignment.inspectorio.info
+  tlsSecretName: devops-assignment.inspectorio.info-secret-tls
