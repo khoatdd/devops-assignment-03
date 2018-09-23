@@ -28,13 +28,11 @@ spec:
             - name: AWS_ACCESS_KEY_ID
               valueFrom:
                 secretKeyRef:
-                  name: aws-credentials
-                  key: aws_access_key_id
+{{ toYaml .Values.credentials.AWS_ACCESS_KEY_ID | indent 18 }}
             - name: AWS_SECRET_ACCESS_KEY
               valueFrom:
                 secretKeyRef:
-                  name: aws-credentials
-                  key: aws_secret_access_key
+{{ toYaml .Values.credentials.AWS_SECRET_ACCESS_KEY | indent 18 }}
           ports:
             - name: http
               containerPort: 80
